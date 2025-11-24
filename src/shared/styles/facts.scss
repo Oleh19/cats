@@ -1,0 +1,14 @@
+@use '@/shared/styles/variables.scss' as *;
+
+$search-width: 373px;
+$filter-width: 300px;
+$input-padding-horizontal: 16px;
+$input-padding-vertical: 12px;
+$search-icon-left-offset: $input-padding-horizontal;
+$search-input-left-padding: calc(
+  #{$icon-size-medium} + #{$input-padding-horizontal} + #{$spacing-xs}
+);
+$filter-button-right-padding: $spacing-xxl;
+$dropdown-gap: 4px;
+$dropdown-z-index: 100;
+$dropdown-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);

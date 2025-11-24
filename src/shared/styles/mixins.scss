@@ -1,0 +1,356 @@
+@use '@/shared/styles/variables.scss' as *;
+
+@mixin button-base {
+  padding: $button-padding;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  border: none;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  transition: background-color $transition-base;
+}
+
+@mixin form-group {
+  margin-bottom: $spacing-lg;
+
+  label {
+    display: block;
+    color: $primary-color;
+    font-weight: $font-weight-medium;
+  }
+}
+
+@mixin input-base {
+  width: 100%;
+  padding: $input-padding;
+  border: none;
+  border-radius: $radius-sm;
+  font-size: $font-size-base;
+  font-family: $font-family-hind;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-label;
+  color: $input-text-color;
+  background-color: $input-bg;
+
+  &::placeholder,
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder {
+    font-family: $font-family-hind;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-base;
+    line-height: $line-height-label;
+  }
+}
+
+@mixin input-base-states {
+  padding: $input-base-padding;
+
+  &:focus {
+    border: 1px solid $input-focus-color;
+    outline: none;
+  }
+
+  &.error {
+    border: 1px solid $error-color;
+  }
+}
+
+@mixin error-message {
+  display: block;
+  color: $error-color;
+  font-size: $font-size-sm;
+  margin-top: 2px;
+}
+
+@mixin error-message-full {
+  margin-top: $spacing-xl;
+  padding: $spacing-lg;
+  background-color: $error-color;
+  color: $white;
+  border-radius: $radius-md;
+  text-align: center;
+  font-family: $font-family-hind;
+}
+
+@mixin login-form-label {
+  font-family: $font-family-hind;
+  font-weight: $font-weight-medium;
+  font-size: $font-size-base;
+  line-height: $line-height-label;
+  color: var(--text-color);
+  transition: color $transition-base;
+}
+
+@mixin login-heading {
+  font-family: $font-family-hind;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-h1-login;
+  line-height: $line-height-h1-login;
+  text-align: center;
+  color: var(--heading-color);
+  transition: color $transition-base;
+}
+
+@mixin general-heading {
+  font-family: $font-family-hind;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-h1-facts;
+  line-height: $line-height-h1-facts;
+  letter-spacing: $letter-spacing-none;
+  text-align: center;
+  color: var(--heading-color);
+  transition: color $transition-base;
+}
+
+@mixin login-button {
+  @include button-base;
+  width: $login-button-width;
+  height: $login-button-height;
+  margin: $spacing-xxxl auto 0;
+  display: block;
+  font-family: $font-family-hind;
+  background-color: $login-button-bg;
+  color: $white;
+
+  &:disabled {
+    opacity: $disabled-opacity;
+    cursor: not-allowed;
+  }
+}
+
+@mixin user-avatar {
+  width: $user-avatar-size;
+  height: $user-avatar-size;
+  background-color: $app-primary-color;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-family-hind;
+  font-weight: $font-weight-medium;
+  font-size: $user-avatar-font-size;
+  letter-spacing: $letter-spacing-none;
+  color: $white;
+
+  .user-avatar-text {
+    line-height: 1;
+    display: block;
+    transform: translateY(0.13em);
+  }
+}
+
+@mixin theme-toggle {
+  position: relative;
+  width: $theme-toggle-width;
+  height: $theme-toggle-height;
+  background-color: $theme-toggle-bg-light;
+  border: none;
+  border-radius: $theme-toggle-radius;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color $transition-base;
+  overflow: hidden;
+
+  &.dark-theme {
+    background-color: $theme-toggle-bg-dark;
+
+    .toggle-slider {
+      left: calc(100% - #{$theme-toggle-slider-size} - #{$theme-toggle-slider-left});
+    }
+
+    .icon-sun {
+      opacity: 0;
+    }
+
+    .icon-moon {
+      opacity: 1;
+    }
+  }
+
+  .toggle-slider {
+    position: absolute;
+    width: $theme-toggle-slider-size;
+    height: $theme-toggle-slider-size;
+    top: $theme-toggle-slider-top;
+    left: $theme-toggle-slider-left;
+    background-color: $theme-toggle-slider-bg;
+    border-radius: $theme-toggle-radius;
+    transition: left $transition-base;
+    z-index: 0;
+  }
+
+  .icon-sun,
+  .icon-moon {
+    position: absolute;
+    object-fit: contain;
+    transition: opacity $transition-base;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .icon-sun {
+    right: $theme-toggle-icon-right;
+    opacity: 1;
+  }
+
+  .icon-moon {
+    left: $theme-toggle-icon-left;
+    opacity: 0;
+  }
+}
+
+@mixin logout-button {
+  position: absolute;
+  top: $logout-button-top;
+  right: 0;
+  min-width: $logout-button-min-width;
+  padding: $logout-button-padding;
+  background-color: var(--logout-button-bg);
+  color: var(--logout-button-text);
+  border: none;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  font-family: $font-family-hind;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-base;
+  line-height: $line-height-label;
+  letter-spacing: $letter-spacing-none;
+  white-space: nowrap;
+  transition: background-color $transition-base, color $transition-base;
+  z-index: 10;
+  text-align: start;
+}
+
+@mixin footer-typography-base {
+  font-family: $font-family-hind;
+  letter-spacing: $letter-spacing-none;
+  line-height: $line-height-footer;
+}
+
+@mixin footer-title {
+  @include footer-typography-base;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-base;
+  color: $white;
+  margin: 0;
+}
+
+@mixin footer-link {
+  @include footer-typography-base;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-sm;
+  color: $white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@mixin footer-text {
+  @include footer-typography-base;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-sm;
+  color: $white;
+  margin: 0;
+}
+
+@mixin icon-base($size) {
+  width: $size;
+  height: $size;
+  flex-shrink: 0;
+  transition: color $transition-base;
+}
+
+@mixin flex-text {
+  flex: 1;
+}
+
+@mixin button-text-left {
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color $transition-base, color $transition-base;
+}
+
+@mixin page-content-padding {
+  padding: $page-content-padding-top $page-content-padding-horizontal $page-content-padding-bottom
+    $page-content-padding-horizontal;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: $page-content-padding-top $mobile-padding-horizontal $page-content-padding-bottom
+      $mobile-padding-horizontal;
+  }
+}
+
+@mixin header-content-padding {
+  padding: 0 $header-padding-horizontal;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 0 $mobile-padding-horizontal;
+  }
+}
+
+@mixin fact-text-base {
+  font-family: $font-family-hind;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: var(--text-color);
+  margin: 0;
+  padding: $card-padding;
+  transition: color $transition-base;
+}
+
+@mixin short-fact-text {
+  font-family: $font-family-hind;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-h1-login;
+  line-height: $line-height-h1-login;
+  letter-spacing: $letter-spacing-none;
+}
+
+@mixin long-fact-text {
+  font-family: $font-family-hind;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-base;
+  line-height: $line-height-footer;
+  letter-spacing: $letter-spacing-none;
+}
+
+@mixin reset-appearance {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+@mixin text-button {
+  font-family: $font-family-hind;
+  font-style: normal;
+  font-weight: $font-weight-semibold;
+  font-size: $font-size-md;
+  line-height: $line-height-button-text;
+  color: $input-focus-color;
+  background: none;
+  border: 1px solid $text-button-border-color;
+  border-radius: $radius-sm;
+  cursor: pointer;
+  padding: $text-button-padding;
+  width: $text-button-width;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  transition: opacity $transition-base;
+
+  &:disabled {
+    opacity: $disabled-opacity;
+    cursor: not-allowed;
+  }
+}
+
+@mixin back-button {
+  font-family: $font-family-hind;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-base;
+  color: var(--text-color);
+  cursor: pointer;
+}

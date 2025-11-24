@@ -1,0 +1,194 @@
+// Colors
+$primary-color: #2c3e50;
+$white: #ffffff;
+$error-color: #ff4646;
+$button-bg: #42b983;
+$input-bg: #ebecff;
+$input-text-color: #434343;
+$login-button-bg: #6e72ec;
+$input-focus-color: #8588ef;
+$text-button-border-color: #a8abff;
+$footer-bg: #121212;
+$footer-divider-color: #8e8e8e;
+$app-primary-color: #636af2;
+
+// Spacing
+$spacing-xs: 5px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-md-lg: 14px;
+$spacing-lg: 20px;
+$spacing-xl: 30px;
+$spacing-xxl: 40px;
+$spacing-xxxl: 48px;
+
+// Sizes
+$container-max-width: 400px;
+$container-max-width-lg: 1200px;
+$page-min-height: 100vh;
+$input-padding: $spacing-md;
+$button-padding: $spacing-md;
+$card-min-width: 300px;
+$login-button-width: 224px;
+$login-button-height: 48px;
+$input-base-padding: 10.5px 16px;
+
+// Border radius
+$radius-sm: 6px;
+$radius-md: 8px;
+$radius-lg: 10px;
+
+// Typography
+$font-family: Avenir, Helvetica, Arial, sans-serif;
+$font-family-hind: 'Hind', sans-serif;
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-md: 18px;
+$font-size-lg: 20px;
+$font-size-xl: 32px;
+$font-size-h1-login: 24px;
+$font-size-h1-facts: 56px;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$line-height-base: 1.6;
+$line-height-h1-login: 34px;
+$line-height-h1-facts: 68px;
+$line-height-label: 27px;
+$line-height-footer: 22px;
+$line-height-button-text: 18px;
+$letter-spacing-none: 0%;
+
+// Transitions
+$transition-base: 0.3s ease;
+
+// States
+$disabled-opacity: 0.6;
+
+// Header
+$header-height: 95px;
+$header-padding-horizontal: 72px;
+$header-z-index: 100;
+$logo-height: 50px;
+$logout-button-top: 83px;
+$logout-button-min-width: 148px;
+$logout-button-padding: 12px 16px;
+
+// Icons
+$icon-size-small: 16px;
+$icon-size-medium: 24px;
+$icon-size-large: 26px;
+
+// Theme Toggle
+$theme-toggle-width: 80px;
+$theme-toggle-height: 37px;
+$theme-toggle-slider-size: 28px;
+$theme-toggle-icon-size: $icon-size-large;
+$theme-toggle-slider-top: 4.5px;
+$theme-toggle-slider-left: 5px;
+$theme-toggle-icon-right: 8px;
+$theme-toggle-icon-left: 8px;
+$theme-toggle-bg-light: #ffffff;
+$theme-toggle-bg-dark: #000000;
+$theme-toggle-slider-bg: #888888;
+$theme-toggle-radius: 30px;
+
+// Breakpoints
+$breakpoint-mobile: 975px;
+
+// Mobile Padding
+$mobile-padding-horizontal: 10px;
+$mobile-filter-button-padding: 12px;
+
+// Mobile Typography
+$mobile-heading-font-size: 36px;
+$mobile-heading-line-height: 40px;
+
+// Page Content
+$page-content-padding-top: 57px;
+$page-content-padding-horizontal: 72px;
+$page-content-padding-bottom: 48px;
+
+// Footer
+$footer-padding-vertical: $spacing-xl;
+$footer-padding-horizontal: $header-padding-horizontal;
+$footer-divider-margin-top: 55px;
+$footer-divider-height: 1px;
+$footer-bottom-margin-top: 32px;
+$footer-social-gap: 24px;
+$footer-language-gap: $spacing-sm;
+
+// Cards & Facts
+$card-gap: 24px;
+$card-padding: 16px;
+$fact-card-width: 410px;
+$fact-card-height: 254px;
+$fact-grid-column-width: 411px;
+$fact-grid-row-gap: 40px;
+$fact-container-max-width: 800px;
+$fact-page-padding-top: 28px;
+$fact-page-padding-bottom: 141px;
+$load-more-wrapper-margin-top: 56px;
+
+// User Avatar
+$user-avatar-size: 56px;
+$user-avatar-font-size: 31px;
+
+// Text Button
+$text-button-padding: 19px;
+$text-button-width: 310px;
+
+// Loader
+$loader-icon-width: 111px;
+$loader-icon-height: 115px;
+
+// Theme Icons
+$theme-icon-moon-color: #ffd914;
+$theme-icon-sun-color: #ffd400;
+
+:root {
+  --spacing-xs: #{$spacing-xs};
+  --spacing-sm: #{$spacing-sm};
+  --spacing-md: #{$spacing-md};
+  --spacing-md-lg: #{$spacing-md-lg};
+  --spacing-lg: #{$spacing-lg};
+  --spacing-xl: #{$spacing-xl};
+  --spacing-xxl: #{$spacing-xxl};
+
+  --container-max-width: #{$container-max-width};
+  --container-max-width-lg: #{$container-max-width-lg};
+  --card-min-width: #{$card-min-width};
+
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+  --radius-lg: #{$radius-lg};
+
+  --font-family: #{$font-family};
+  --font-size-base: #{$font-size-base};
+  --font-size-sm: #{$font-size-sm};
+  --font-size-lg: #{$font-size-lg};
+  --font-size-xl: #{$font-size-xl};
+  --font-weight-medium: #{$font-weight-medium};
+  --font-weight-semibold: #{$font-weight-semibold};
+  --line-height-base: #{$line-height-base};
+
+  --transition-base: #{$transition-base};
+
+  --header-bg: #{$input-bg};
+  --primary-color: #{$primary-color};
+  --text-color: #{$input-text-color};
+  --bg-color: #{$white};
+  --heading-color: #{$primary-color};
+  --logout-button-bg: #{$input-bg};
+  --logout-button-text: #{$input-text-color};
+  --input-bg: #{$input-bg};
+  --input-text-color: #{$input-text-color};
+  --input-placeholder-color: #{$input-text-color};
+  --card-hover-bg: #{$input-bg};
+  --filter-arrow-color: #{$input-text-color};
+  --filter-dropdown-bg: #{$input-bg};
+  --filter-option-color: #{$input-text-color};
+  --filter-option-hover-bg: #{$input-bg};
+  --filter-selected-color: #{$login-button-bg};
+}
