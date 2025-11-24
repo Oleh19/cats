@@ -91,13 +91,18 @@ export default {
 
   .logo {
     color: $white;
-    order: 1;
+    @media (max-width: 575px) {
+      order: 1;
+    }
   }
 
   .footer-columns {
     display: flex;
     gap: $spacing-xxl;
-    order: 0;
+
+    @media (max-width: 575px) {
+      order: 0;
+    }
   }
 
   .footer-column {
