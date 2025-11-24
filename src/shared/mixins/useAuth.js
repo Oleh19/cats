@@ -1,4 +1,4 @@
-import { getAuthData, clearAuthData, STORAGE_KEYS } from '@/utils/auth'
+import { getAuthData, STORAGE_KEYS } from '@/utils/auth'
 import { eventBus } from '@/utils/eventBus'
 
 export const useAuth = {
@@ -53,12 +53,10 @@ export const useAuth = {
       }
     },
     handleLogout() {
-      clearAuthData()
+      localStorage.clear()
       this.updateAuthData()
       eventBus.$emit('auth-updated')
-      if (this.$router) {
-        this.$router.push('/login')
-      }
+      this.$router?.push('/login')
     },
   },
 }

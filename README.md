@@ -1,12 +1,14 @@
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd vue2-project
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
@@ -14,6 +16,7 @@ npm install
 ### Running the Application
 
 Start the development server:
+
 ```bash
 npm run dev
 ```

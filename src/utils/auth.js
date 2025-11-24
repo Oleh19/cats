@@ -15,11 +15,6 @@ export function getAuthData() {
   }
 }
 
-export function clearAuthData() {
-  localStorage.removeItem(STORAGE_KEYS.IS_AUTHENTICATED)
-  localStorage.removeItem(STORAGE_KEYS.USERNAME)
-}
-
 export function isAuthenticated() {
   return getAuthData().isAuthenticated
 }

@@ -37,12 +37,12 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const authRequired = to.path === '/facts' || to.path.startsWith('/fact/')
   const userIsAuthenticated = isAuthenticated()
+  const isLoginPage = to.path === '/login'
 
-  if (authRequired && !userIsAuthenticated) {
+  if (!userIsAuthenticated && !isLoginPage) {
     next('/login')
-  } else if (to.path === '/login' && userIsAuthenticated) {
+  } else if (userIsAuthenticated && isLoginPage) {
     next('/facts')
   } else {
     next()
